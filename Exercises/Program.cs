@@ -4,24 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        var sum = 0;
+        Console.WriteLine("Please enter a number");
 
-        while (true)
+        var number = int.Parse(Console.ReadLine());
+
+        var factorial = 1;
+
+        for (int i = number; i > 0; i--)
         {
-            Console.WriteLine("Please enter a number, or type \"OK\" to EXIT");
-
-            var input = Console.ReadLine();
-
-            if (input.ToUpper() == "OK")
-            {
-                break;
-            }
-            else
-            {
-                sum += int.Parse(input);
-                Console.WriteLine(sum);
-            }
+            factorial *= i;
         }
-        Console.WriteLine("You have been exited from this program. Here is your sum: " + sum);
+
+        Console.WriteLine("{0}! = {1}", number, factorial);
     }
 }
